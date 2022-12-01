@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+        <lightning-input class="styling" type="checkbox" label="Show Div" onchange={showDivHandler}></lightning-input>
+        <template if:true={showDiv}>
+            <div class="styling">
+                This is true div tag
+            </div>
+        </template>
+        <template if:false={showDiv}>
+            <div class="styling">
+                This is false div tag
+            </div>
+        </template>
+        <template for:each={cityList} for:item="city">
+            <p key={city} class="styling">{city}</p>
+         </template>
+         <h3 class="styling">Below is an example of iterator directive</h3>
+         <template iterator:it={cityList}>
+            <p key={it.value} class="styling">{it.value}</p>
+         </template>
+    </lightning-card>
+</template>
